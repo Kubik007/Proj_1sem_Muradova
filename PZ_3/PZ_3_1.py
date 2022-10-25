@@ -1,6 +1,10 @@
-a = int(input())
-
-if a % 2 != 0 and len(str(a)) == 3:
-    print('Истина')
-else:
-    print('Ложь')
+# Дано целое положительное число. Проверить истинность высказывания "Данное число является нечетным трехзначным"
+a = input()
+try:
+    int(a)
+    if len(str(a)) == 3 and a % 2 != 0:
+        print('Истина')
+    else:
+        print('Ложь')
+except ValueError:
+    print('Ошибка')
