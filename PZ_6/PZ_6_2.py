@@ -22,5 +22,5 @@ for i in range(len(x) - 1):
         y = v
         index_1 = x[i]
         index_2 = x[i + 1]
-print('Первый индекс', index_1)
-print('Второй индекс', index_2)
+print('Первый элемент', index_1)
+print('Второй элемент', index_2)
