@@ -11,12 +11,11 @@ index_1 = 0
 index_2 = 0
 v = 0
 y = 100
-for i in range(N):
-    x.append(randint(0, 100))
+for i in range(N): #заполняем список
+    x.append(randint(0, 100)) #добавляем рандомные значения от 0 до 100
 print(x)
-x.append(0)
 for i in range(len(x) - 1):
-    sam = x[i] + x[i+1]
+    sam = x[i] + x[i+1]  #приравниваем sam к сумме двух чисел
     v = abs(R - sam)
     if v <= y:
         y = v
