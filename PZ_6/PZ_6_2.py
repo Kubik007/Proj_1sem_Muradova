@@ -2,30 +2,25 @@
 # которых наиболее близка к числу R, и вывести эти элементы в порядке возрастания их
 # индексов (определение наиболее близких чисел - то есть такой элемент AK, для
 # которого величина |AK - R| является минимальной).
-
 from random import randint
-razmer = int(input('введите размер списка'))
-r = int(input('введите r'))
-a = []
-sum = 0
-min_1 = 0
-min_2 = 0
-value = 0
-b = 1000
-
-
-for i in range(razmer):
-    a.append(randint(0, 100))
-print(a)
-a.append(0)
-
-
-for i in range(len(a) - 1):
-    sum = a[i] + a[i + 1]
-    value = abs(r - sum)
-    if value < b:
-        b = value
-        min_1 = a[i]
-        min_2 = a[i + 1]
-print('первый индеккс', min_1)
-print('второй индекс', min_2)
+N = int(input('Введите размер списка'))
+R = int(input('Введите R'))
+x = []
+sam = 0
+index_1 = 0
+index_2 = 0
+v = 0
+y = 100
+for i in range(N):
+    x.append(randint(0, 100))
+print(x)
+x.append(0)
+for i in range(len(x) - 1):
+    sam = x[i] + x[i+1]
+    v = abs(R - sam)
+    if v <= y:
+        y = v
+        index_1 = x[i]
+        index_2 = x[i + 1]
+print('Первый индекс', index_1)
+print('Второй индекс', index_2)
