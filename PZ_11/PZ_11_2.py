@@ -1,0 +1,27 @@
+# Из предложенного текстового файла (text18-18.txt) вывести на экран его содержимое,
+# количество знаков пунктуации в первых четырёх строках. Сформировать новый файл, в
+# который поместить текст в стихотворной форме выведя строки в обратном порядке
+
+
+f1 = open('text18-18.txt', encoding='UTF-8')
+print(f1.read())
+f1.close()
+
+a = 0
+for i in open('text18-18.txt', encoding='UTF-8'):
+    if i == '.':
+        a += 1
+    if i == '...':
+        a += 1
+    if i == '-':
+        a += 1
+
+f1 = open('text18-18.txt', encoding='UTF-8')
+l = f1.readlines()
+l = l[::-1]
+f1.close()
+
+f2 = open('text18-18_new.txt', 'w', encoding='UTF-8')
+f2.writelines(l)
+f2.close()
+
