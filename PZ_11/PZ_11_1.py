@@ -7,39 +7,37 @@
 # Последовательность, в которой каждый последующий элемент равен квадрату суммы двух соседних элементов:
 
 
-a = ['-5 0 10 25 -50 100']
-f1 = open('PZ_11_1_f1.txt', 'w')
-f1.writelines(a)
+from random import randint
+
+
+a = []
+for i in range(randint(5, 10)):
+    a.append(str(randint(-10, 10)))
+
+f1 = open('PZ_11_1_f1.txt', 'w', encoding="UTF-8")
+f1.write(", ".join(a))
 f1.close()
 
 f2 = open('PZ_11_1_f2.txt', 'w')
 f2.write('Исходные данные: ')
-f2.writelines(a)
-f2.close()
+f2.write(", ".join(a))
 
-f1 = open('PZ_11_1_f1.txt')
-k = f1.read()
-k = k.split()
-for i in range(len(k)):
-    k[i] = int(k[i])
-f1.close()
-
-f2 = open('PZ_11_1_f2.txt', 'a')
 f2.write('\n')
 f2.write('Количество элементов: ')
-f2.write(str(len(k)))
-f2.close()
+f2.write(str(len(a)))
 
-f2 = open('PZ_11_1_f2.txt', 'a')
+k = []
+for i in range(len(a)):
+    k.append(int(a[i]))
+
 f2.write('\n')
 f2.write('Среднее арифметическое элементов: ')
 f2.write(str(sum(k)/len(k)))
-f2.close()
 
-f2 = open('PZ_11_1_f2.txt', 'a')
 f2.write('\n')
 f2.write('Последовательность, в которой каждый последующий элемент равен квадрату суммы двух соседних элементов: ')
-for i in a:
-    a[i] = int(a[i-1] + a[i+1])**2
-f2.write(a[i])
+p = []
+for i in range(len(k) - 1):
+    p.append(str((k[i-1] + k[i+1])**2))
+f2.write(", ".join(p))
 f2.close()
