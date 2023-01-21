@@ -4,17 +4,17 @@
 
 
 f1 = open('text18-18.txt', encoding='UTF-8')
-print(f1.read())
+info = f1.read()
 f1.close()
 
+print(info)
+
+four = " ".join(info.split("\n")[:4])
 a = 0
-for i in open('text18-18.txt', encoding='UTF-8'):
-    if i == '.':
+for i in four:
+    if i in "—.,!?:;…":
         a += 1
-    if i == '...':
-        a += 1
-    if i == '-':
-        a += 1
+print(a)
 
 f1 = open('text18-18.txt', encoding='UTF-8')
 l = f1.readlines()
