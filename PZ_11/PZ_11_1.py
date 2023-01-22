@@ -35,8 +35,13 @@ f2.write(str(sum(k)/len(k)))
 f2.write('\n')
 f2.write('Последовательность, в которой каждый последующий элемент равен квадрату суммы двух соседних элементов: ')
 p = []
+g = []
+l = []
+n = []
+p.append(str(k[1]**2))
 for i in range(len(k) - 1):
-    p.append(str((k[i - 1] + k[i + 1]) ** 2))
-f2.write(", ".join(p))
-
+    g.append(str((k[i - 1] + k[i + 1]) ** 2))
+l.append(str(k[-2]**2))
+n = p + g[1::] + l
+f2.write(", ".join(n))
 f2.close()
