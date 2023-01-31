@@ -4,5 +4,5 @@ def letters(low: str):
         yield n.lower()
 
 
-a = input("Введите стороку: ")
+a = input("Введите строку: ")
 print("".join(letters(a)))
